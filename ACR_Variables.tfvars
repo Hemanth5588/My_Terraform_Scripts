@@ -1,0 +1,9 @@
+client_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+tenant_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+client_secret = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+location = "Canada East"
+resource_group_name = "terraform_project1"
+container_registry_name = "myintelliqacr"
+container_registry_sku = "Basic"
+admin_previlages = true
