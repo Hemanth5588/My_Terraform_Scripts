@@ -14,5 +14,5 @@ port = 8080
 protocol = "TCP"
 image_registry_server = "index.docker.io"
 dockerhub_username = "hemanth5588"
-dockerhub_password = "Anil@5588"
+dockerhub_password = "xxxxxxxxx"
 ip_address_type = "Public"
