@@ -1,0 +1,10 @@
+client_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+tenant_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+client_secret = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+location = "East US"
+resource_group_name = "terraform_project1"
+redis_capacity = 1
+redis_family = "C"
+redis_name = "myredisdb"
+redis_sku = "Basic"
