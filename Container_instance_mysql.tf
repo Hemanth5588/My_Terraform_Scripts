@@ -66,6 +66,7 @@ resource "azurerm_container_group" "my_containers" {
       protocol = var.protocol
     }
   }
+# Docker Hub credential
    image_registry_credential {
      server   = var.image_registry_server
      username = var.dockerhub_username
