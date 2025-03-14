@@ -1,0 +1,13 @@
+client_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+tenant_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+client_secret = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+location = "East US"
+resource_group_name = "terraform_project1"
+cosmos_account_name = "intelliqcosmos"
+db_type = "MongoDB"
+offer_type = "Standard"
+failover_priority = 0
+consistency_level = "BoundedStaleness"
+max_interval = 300
+max_staleness = 100000
