@@ -50,6 +50,14 @@ resource "azurerm_subnet" "my_subnet1" {
   virtual_network_name = azurerm_virtual_network.my_vnet.name
 }
 
+# Create Public ip
+resource "azurerm_public_ip" "my_pub_id" {
+  allocation_method   = "Static"
+  location            = azurerm_resource_group.my_project1.location
+  name                = "vm_pub_id"
+  resource_group_name = azurerm_resource_group.my_project1.name
+}
+
 # Create Network Interface card
 resource "azurerm_network_interface" "my_nic" {
   location            = azurerm_resource_group.my_project1.location
@@ -60,6 +68,7 @@ resource "azurerm_network_interface" "my_nic" {
     name                          = "internal"
     private_ip_address_allocation = "Dynamic"
     subnet_id = azurerm_subnet.my_subnet1.id
+    public_ip_address_id = azurerm_public_ip.my_pub_id.id
   }
 }
 
@@ -104,6 +113,7 @@ resource "azurerm_linux_virtual_machine" "jenkins_host" {
 
   }
 }
+
 # Create Network Interface Security group association
 resource "azurerm_network_interface_security_group_association" "my_nisa" {
   network_interface_id      = azurerm_network_interface.my_nic.id
