@@ -52,7 +52,8 @@ resource "azurerm_subnet" "my_subnet1" {
 
 # Create Public ip
 resource "azurerm_public_ip" "my_pub_id" {
-  allocation_method   = "Static"
+  allocation_method   = "Dynamic" # Can be "Static" or "Dynamic"
+  sku = "Basic" #Note Public IP "Standard" SKUs require allocation_method to be set to "Static".
   location            = azurerm_resource_group.my_project1.location
   name                = "vm_pub_id"
   resource_group_name = azurerm_resource_group.my_project1.name
@@ -82,6 +83,7 @@ resource "azurerm_linux_virtual_machine" "jenkins_host" {
   network_interface_ids = [azurerm_network_interface.my_nic.id]
   resource_group_name             = azurerm_resource_group.my_project1.name
   size                            = "Standard_B1s"
+
 
   os_disk {
     caching              = "ReadWrite"
