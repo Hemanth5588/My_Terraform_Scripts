@@ -75,18 +75,27 @@ resource "tls_private_key" "ssh_key" {
   rsa_bits = 4096
 }
 
-# Save the private key file at local working dir
+# Create the private key file at local working dir
 resource "local_file" "private_key" {
   filename        = "${path.module}/id_rsa"
   content         = tls_private_key.ssh_key.private_key_pem
   file_permission = "0750"
 }
 
-# Save the public key file at local working dir
+# Create the public key file at local working dir
 resource "local_file" "public_key" {
   filename        = "${path.module}/id_rsa.pub"
   content         = tls_private_key.ssh_key.public_key_openssh
   file_permission = "0755"
+}
+
+# Create SSH Key resource to store the public key in Azure.(Optional)
+resource "azurerm_ssh_public_key" "ssh_public_key" {
+  location            = azurerm_resource_group.my_project1.location
+  name                = "tlabsshkey"
+  public_key = tls_private_key.ssh_key.public_key_openssh
+  # public_key          = file("${path.module}/id_rsa.pub")
+  resource_group_name = azurerm_resource_group.my_project1.name
 }
 
 # Create Virtual Network
