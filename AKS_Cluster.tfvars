@@ -1,0 +1,12 @@
+client_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+tenant_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+client_secret = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+location = "West US"
+resource_group_name = "tlab_project1"
+cluster_name = "tlabscluster"
+cluster_dns_prefix = "tlabsAKS"
+node_pool_name = "tlabspool"
+node_size ="Standard_D2_v2"
+node_count = 2
+identity = "SystemAssigned" # it means managed Kubernetes Cluster
